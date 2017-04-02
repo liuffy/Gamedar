@@ -31,26 +31,21 @@ With this extension, users will be able to:
 
 ### Technologies
 
-This extension will be implemented using standard Chrome extension technology: **Javascript, HTML, and CSS**. In addition, it uses **React/Redux** to handle state.
+This extension will be implemented using **Javascript, HTML, and CSS**. In addition, it uses **React/Redux** to handle state, and **Firebase** to construct a realtime, cloud-hosted database. 
 
-Submitting an query via the form on the popup sends an AJAX request to the Yelp API for businesses that are close to the user's location OR located in the city inputted by the user. Returning to the search screen and submitting another input sends a new request for that query. 
+Authentification will also be supported by Firebase. 
 
-There will be several React components used to build this extension: 
+There will be several React components used to build this website: 
 
-- `SearchForm`: will be the input form for submitting queries
-- `SingleResult`: will display the result, based on the user's location (Option 1) as automatically calculated through using the geolocation API.
-- `ResultList`: will display the results, based on the city inputted by the user (Option2)
-  - `ResultList` will contain an unordered list of `ResultIndexItem`s for each of the results if the user wants to check for all of the franchises in a city. 
-
-There will also be an HTML file to display the content:
-
-- `popup.html` - page shown when the extension button is clicked. Styled by various CSS files.
+- `GameSearch`: will be the search bar for submitting queries on specific names of video games
+- `NewsIndex`: will display either all results or results filtered by genre or platform. 
+  - `NewsIndex` will contain an unordered list of `NewsIndexItem`s for each of the results.
+  - It will also contain `ReleaseDateIndex`, a list of games and their upcoming release dates, ordered by how soon they will be released.
 
 ### Technical Challenges
 
-* The search mechanism will need to be accurate, otherwise the app could present misleading information. 
-* Holiday hours for a business are often drastically different from its regular business hours. Will need to incorporate a calendar that adds a warning if the current day is a national holiday.
-* Will try to add link to displayed address that opens up a tab to a Google Maps displaying the location of the business. 
+* 
+* 
 
 ## Implementation Timeline
 
