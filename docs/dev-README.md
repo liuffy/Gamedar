@@ -19,9 +19,6 @@ With this extension, users will be able to:
 
 - [ ] Check for release dates and news about video games, either in aggregated form or by genre or platform.
 - [ ] Search for release dates or news articles for a *specific game* in the search bar.
-- [ ] Add comments on newsArticle objects, which will be immediately displayed at the bottom of the article. 
-  - [ ] This will require the user to create an account (however, all content is viewable without authentification of any sort)
-
 
 ### Wireframes 
 ![Wireframe1](http://res.cloudinary.com/liuffy/image/upload/v1491088803/gamedar-wireframe-1_jmfsnw.png)  
@@ -38,6 +35,7 @@ Authentification will also be supported by Firebase.
 There will be several React components used to build this website: 
 
 - `GameSearch`: will be the search bar for submitting queries on specific names of video games
+- `DropDownMenu`: the drop down menu component for the `Genre` and `Platform` buttons
 - `NewsIndex`: will display either all results or results filtered by genre or platform. 
   - `NewsIndex` will contain an unordered list of `NewsIndexItem`s for each of the results.
   - It will also contain `ReleaseDateIndex`, a list of games and their upcoming release dates, ordered by how soon they will be released.
@@ -46,51 +44,60 @@ There will be several React components used to build this website:
 
 * Configuring Firebase
 * Aggregating data from multiple gaming APIs - will they all have the endpoints needed to be usable?
+* How to avoid posting repeat articles?
 
 
 ## Implementation Timeline
 
-**Day 1: Learning, Tutorialing**
+**Part 1: Learning, Tutorialing**
 * Learn how to implement Firebase by completing [this tutorial](https://www.airpair.com/firebase/posts/firebase-building-realtime-app)
 * Set up React file structure, package.json and Firebase forge for app
 
 By the end of the day, the project folder will have: 
 - [X] Completed tutorial 
 - [ ] `React` file structure
-- [ ] `package.json` - contains dependencies (i.e. babel-core, react, redux, etc.)
+- [X] `package.json` - contains dependencies (i.e. babel-core, react, redux, etc.)
+- [X] `.gitignore` file
 - [ ] `webpack.config.js` - webpack bundling file
   - [ ] Add main entry point of the extension.
 - [ ] Set up Firebase Forge
  
-**Day 2: API Wrapping, Testing, Aggregating** 
+**Part 2: API Wrapping, Testing, Aggregating** 
 * Research geolocation API and Yelp API.
 * Deploy skeleton on Heroku 
 
 By the end of the day, I should have:
 - [ ] Figured out how to get results from each of the APIs by genre, platform, and name (and figured out if all are usable)
+- [ ] Configured Firebase database
 - [ ] Deployed draft of app on Heroku
 
 
-**Day 3: Redux Cycles - Part 1**
+**Part 3: Redux Cycles - Part 1**
 * Create utils for API calls, action creators, reducers, redux store.
-- [X] `yelp_api_utils.js` - handle queries for Yelp API
-  - [X] Test API calls in Dev Tools 
-- [X] `yelp_actions.js` - action creators 
-- [X] `result_reducer.js` - process action.data
-- [X] `root_reducer.js` - gathers child reducers' results into single state object
-- [X] `store.js` - holds the whole state tree of the app
+- [ ] `news_utils.js` - handle queries for APIs
+  - [ ] Test API calls in Dev Tools 
+- [ ] `news_actions.js` - action creators 
+- [ ] `news_reducer.js` - process action.data
+- [ ] `root_reducer.js` - gathers child reducers' results into single state object
+- [ ] `store.js` - holds the whole state tree of the app
 
-**Day 4: Redux Cycles - Part 2 (Rendering!)**
+**Part 4: Redux Cycles - Part 2 (Rendering!)**
 * Create components for extension.
-- [X] `root.jsx` - Figure out routing 
-- [X] `SearchForm`: will be the input form for submitting queries
-- [X] `ResultList`: (index) will display all results 
-  - [X] contains an unordered list of `ResultIndexItem`s for each of the results
-- [X] `ResultShow`: provides additional information about the business (i.e. address/#)
+- [ ] `root.jsx` - Figure out routing 
+- `DropDownMenu`: the drop down menu component for the `Genre` and `Platform` buttons
+- [ ] `GameSearch`: Input form for submitting queries
+- [ ] `NewsIndex`: (Index) will display all results 
+  - [ ] contains an unordered list of `NewsIndexItem`s for each of the results
+- [ ] `NewsModal`: modal that dynamically renders the article that the user clicks on
 
+**Part 5: Clean up and Deploy**
+- [ ] Final styling - make sure all components are aesthetically consistent
+- [ ] Clean up code in all files
+- [ ] Remove any unused dependencies listed in `package.json` file
+- [ ] Check how page looks in all modern browsers
 
-**Day 7: Deploying and distribution**
-- [ ] Compress extension folder into a .zip file. 
-- [ ] Add new item on the developer dashboard.
-- [ ] Share link to Google Chrome extension and demo page on Facebook, Tumblr, and Reddit. 
+## Stylistic Elements I want to use/feature: 
+- [ ] Drop-down menu
+- [ ] Responsive layout (Masonry, responsive grid based on percentages, media queries)
+- [ ] "Load more" button (Preferable for [reasons](https://www.smashingmagazine.com/2016/03/pagination-infinite-scrolling-load-more-buttons/))
 
