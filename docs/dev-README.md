@@ -44,30 +44,32 @@ There will be several React components used to build this website:
 
 ### Technical Challenges
 
-* 
-* 
+* Configuring Firebase
+* Aggregating data from multiple gaming APIs - will they all have the endpoints needed to be usable?
+
 
 ## Implementation Timeline
 
 **Day 1: Learning, Tutorialing**
-* Learn the essential infrastructure of a Chrome Extension by following the [tutorial provided by Google Chrome.](https://developer.chrome.com/extensions/getstarted). Build a test extension in a separate folder. 
-* Do some research on purpose and structure of a `manifest.json` file. 
-* Then, start building the infrastructure for personal extension. By the end of the day, the project folder will will have:
+* Learn how to implement Firebase by completing [this tutorial](https://www.airpair.com/firebase/posts/firebase-building-realtime-app)
+* Set up React file structure, package.json and Firebase forge for app
 
-- [X] A completed `package.json`
-- [X] A completed `manifest.json`
-- [?] Script for Google Analytics 
-
-**Day 2: Basic UI, Geolocation API, Yelp API**
-* Add main entry point of the extension. 
-* Flesh out basic UI.
+By the end of the day, the project folder will have: 
+- [X] Completed tutorial 
+- [ ] `React` file structure
+- [ ] `package.json` - contains dependencies (i.e. babel-core, react, redux, etc.)
+- [ ] `webpack.config.js` - webpack bundling file
+  - [ ] Add main entry point of the extension.
+- [ ] Set up Firebase Forge
+ 
+**Day 2: API Wrapping, Testing, Aggregating** 
 * Research geolocation API and Yelp API.
+* Deploy skeleton on Heroku 
 
-By the end of the day, the project folder will have:
-- [X] `popup.html` - main entry point of the app as defined in the manifest file.
-- [X] `popup.js` - use javascript file by the [the Chromium Authors](http://the-chromium-authors.software.informer.com/)
-- [X] `webpack.config.js` - webpack bundling file
-- [X] `package.json` - contains dependencies (i.e. babel-core, react, redux, etc.)
+By the end of the day, I should have:
+- [ ] Figured out how to get results from each of the APIs by genre, platform, and name (and figured out if all are usable)
+- [ ] Deployed draft of app on Heroku
+
 
 **Day 3: Redux Cycles - Part 1**
 * Create utils for API calls, action creators, reducers, redux store.
@@ -86,39 +88,9 @@ By the end of the day, the project folder will have:
   - [X] contains an unordered list of `ResultIndexItem`s for each of the results
 - [X] `ResultShow`: provides additional information about the business (i.e. address/#)
 
-**Day 6: CSS Styling, demo page for chrome extension** 
-
-By the end of the day:
-- [X] Have components/HTML styled nicely using CSS.
-- [X] Create icon for extension
-- [ ] Set up github page for the extension.
-- [ ] Mock up wireframes for how the demo page will look 
-- [X] Grab nice looking screenshots from the chrome extension
-- [ ] Make a few gifs that shows off the key features of the chrome extension
 
 **Day 7: Deploying and distribution**
 - [ ] Compress extension folder into a .zip file. 
 - [ ] Add new item on the developer dashboard.
 - [ ] Share link to Google Chrome extension and demo page on Facebook, Tumblr, and Reddit. 
 
-
-### Plan for getting users and reviews
-
-- Will share link to Google Chrome extension in: 
-- [ ] Facebook groups such as:
-  - [X] **Techy Wendy** (Tech-focused group for Wellesley College alumni) 
-  - [ ] **Community** (large Facebook group for Wellesley College alumni) 
-  - [ ] **Wellesley By the Bay** (Facebook group for Wellesley alumni living in the bay area) 
-  - [ ] General Facebook page
-- [ ] Reddit forums such as:
-  - [X] **/r/chrome_extensions/**
-  - [X] **/r/webdev/**
-  - [X] **/r/IMadeThis/**
-  - [ ] **/r/chrome/**
-
-## Bonus Features :sparkles:
-
-- [ ] Save favorites: Add panel that shows results for saved locations. :sparkling_heart:
-- [ ] Options menu: Allow users to customize their experience by being able to choose aspects such as:
-  - [ ] Whether to display time in 24-hour format or 12-hour format
-  - [ ] Number of results shown for each query.
